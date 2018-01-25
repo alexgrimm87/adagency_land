@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <!-- build:css -->
+
+    <link rel="stylesheet" href="css/fancybox.css">
+    <link rel="stylesheet" href="css/formstyler.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <!-- add new file here -->
+
+    <link rel="stylesheet" href="css/zdev_0_basic.css">
+    <link rel="stylesheet" href="css/zdev_6.css">
+    <link rel="stylesheet" href="css/zdev_6_adapt.css">
+    <link rel="stylesheet" href="css/zdev_7.css">
+    <link rel="stylesheet" href="css/zdev_7_adapt.css">
+
+<script>
+    var canvas1, stage1, exportRoot1;
+    var canvas2, stage2, exportRoot2;
+    var canvas3, stage3, exportRoot3;
+
+    function init1() {
+        canvas1 = document.getElementById("canvas1");
+        handleComplete1();
+    }
+
+    function init2() {
+        canvas2 = document.getElementById("canvas2");
+        handleComplete2();
+    }
+
+    function init3() {
+        canvas3 = document.getElementById("canvas3");
+        handleComplete3();
+    }
+
+    function handleComplete1() {
+        //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+        exportRoot1 = new lib1.mark();
+        stage1 = new createjs.Stage(canvas1);
+        stage1.addChild(exportRoot1); 
+        //Registers the "tick" event listener.
+        createjs.Ticker.setFPS(lib1.properties.fps);
+        createjs.Ticker.addEventListener("tick", stage1);        
+        //Code to support hidpi screens and responsive scaling.
+        (function(isResp, respDim, isScale, scaleType) {        
+            var lastW, lastH, lastS=1;      
+            window.addEventListener('resize', resizeCanvas);        
+            resizeCanvas();     
+            function resizeCanvas() {           
+                var w = lib1.properties.width, h = lib1.properties.height;            
+                var iw = window.innerWidth, ih=window.innerHeight;          
+                var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;          
+                if(isResp) {                
+                    if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+                        sRatio = lastS;                
+                    }               
+                    else if(!isScale) {                 
+                        if(iw<w || ih<h)                        
+                            sRatio = Math.min(xRatio, yRatio);              
+                    }               
+                    else if(scaleType==1) {                 
+                        sRatio = Math.min(xRatio, yRatio);              
+                    }               
+                    else if(scaleType==2) {                 
+                        sRatio = Math.max(xRatio, yRatio);              
+                    }           
+                }           
+                canvas1.width = w*pRatio*sRatio;         
+                canvas1.height = h*pRatio*sRatio;
+                canvas1.style.width = w*sRatio+'px';         
+                canvas1.style.height = h*sRatio+'px';
+                stage1.scaleX = pRatio*sRatio;           
+                stage1.scaleY = pRatio*sRatio;           
+                lastW = iw; lastH = ih; lastS = sRatio;     
+            }
+        })(false,'both',false,1);   
+    }
+
+    function handleComplete2() {
+        //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+        exportRoot2 = new lib2.dev();
+        stage2 = new createjs.Stage(canvas2);
+        stage2.addChild(exportRoot2);
+        //Registers the "tick" even2t listener.
+        createjs.Ticker.setFPS(lib2.properties.fps);
+        createjs.Ticker.addEventListener("tick", stage2);        
+        //Code to support hidpi screens and responsive scaling.
+        (function(isResp, respDim, isScale, scaleType) {        
+            var lastW, lastH, lastS=1;      
+            window.addEventListener('resize', resizeCanvas);        
+            resizeCanvas();     
+            function resizeCanvas() {           
+                var w = lib2.properties.width, h = lib2.properties.height;            
+                var iw = window.innerWidth, ih=window.innerHeight;          
+                var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;          
+                if(isResp) {                
+                    if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+                        sRatio = lastS;                
+                    }               
+                    else if(!isScale) {                 
+                        if(iw<w || ih<h)                        
+                            sRatio = Math.min(xRatio, yRatio);              
+                    }               
+                    else if(scaleType==1) {                 
+                        sRatio = Math.min(xRatio, yRatio);              
+                    }               
+                    else if(scaleType==2) {                 
+                        sRatio = Math.max(xRatio, yRatio);              
+                    }           
+                }           
+                canvas2.width = w*pRatio*sRatio;         
+                canvas2.height = h*pRatio*sRatio;
+                canvas2.style.width = w*sRatio+'px';         
+                canvas2.style.height = h*sRatio+'px';
+                stage2.scaleX = pRatio*sRatio;           
+                stage2.scaleY = pRatio*sRatio;           
+                lastW = iw; lastH = ih; lastS = sRatio;     
+            }
+        })(false,'both',false,1);   
+    }
+
+    function handleComplete3() {
+        //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+        exportRoot3 = new lib3.seo();
+        stage3 = new createjs.Stage(canvas3);
+        stage3.addChild(exportRoot3); 
+
+        //Registers the "tick" event listener.
+        createjs.Ticker.setFPS(lib3.properties.fps);
+        createjs.Ticker.addEventListener("tick", stage3);        
+        //Code to support hidpi screens and responsive scaling.
+        (function(isResp, respDim, isScale, scaleType) {        
+            var lastW, lastH, lastS=1;      
+            window.addEventListener('resize', resizeCanvas);        
+            resizeCanvas();     
+            function resizeCanvas() {           
+                var w = lib3.properties.width, h = lib3.properties.height;            
+                var iw = window.innerWidth, ih=window.innerHeight;          
+                var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;          
+                if(isResp) {                
+                    if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+                        sRatio = lastS;                
+                    }               
+                    else if(!isScale) {                 
+                        if(iw<w || ih<h)                        
+                            sRatio = Math.min(xRatio, yRatio);              
+                    }               
+                    else if(scaleType==1) {                 
+                        sRatio = Math.min(xRatio, yRatio);              
+                    }               
+                    else if(scaleType==2) {                 
+                        sRatio = Math.max(xRatio, yRatio);              
+                    }           
+                }           
+                canvas3.width = w*pRatio*sRatio;         
+                canvas3.height = h*pRatio*sRatio;
+                canvas3.style.width = w*sRatio+'px';         
+                canvas3.style.height = h*sRatio+'px';
+                stage3.scaleX = pRatio*sRatio;           
+                stage3.scaleY = pRatio*sRatio;           
+                lastW = iw; lastH = ih; lastS = sRatio;     
+            }
+        })(false,'both',false,1);   
+    }
+
+    var canvasRocket, stageRocket, exportRootRocket;
+    function initRocket() {
+        canvasRocket = document.getElementById("canvasRocket");
+        handleCompleteRocket();
+    }
+    function handleCompleteRocket() {
+        //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+        exportRootRocket = new libRocket.rocket();
+        stageRocket = new createjs.Stage(canvasRocket);
+        stageRocket.addChild(exportRootRocket); 
+        //Registers the "tick" event listener.
+        createjs.Ticker.setFPS(libRocket.properties.fps);
+        createjs.Ticker.addEventListener("tick", stageRocket);        
+        //Code to support hidpi screens and responsive scaling.
+        (function(isResp, respDim, isScale, scaleType) {        
+            var lastW, lastH, lastS=1;      
+            window.addEventListener('resize', resizeCanvas);        
+            resizeCanvas();     
+            function resizeCanvas() {           
+                var w = libRocket.properties.width, h = libRocket.properties.height;            
+                var iw = window.innerWidth, ih=window.innerHeight;          
+                var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;          
+                if(isResp) {                
+                    if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+                        sRatio = lastS;                
+                    }               
+                    else if(!isScale) {                 
+                        if(iw<w || ih<h)                        
+                            sRatio = Math.min(xRatio, yRatio);              
+                    }               
+                    else if(scaleType==1) {                 
+                        sRatio = Math.min(xRatio, yRatio);              
+                    }               
+                    else if(scaleType==2) {                 
+                        sRatio = Math.max(xRatio, yRatio);              
+                    }           
+                }           
+                canvasRocket.width = w*pRatio*sRatio;         
+                canvasRocket.height = h*pRatio*sRatio;
+                canvasRocket.style.width = w*sRatio+'px';         
+                canvasRocket.style.height = h*sRatio+'px';
+                stageRocket.scaleX = pRatio*sRatio;           
+                stageRocket.scaleY = pRatio*sRatio;           
+                lastW = iw; lastH = ih; lastS = sRatio;     
+            }
+        })(false,'both',false,1);   
+    }
+
+    var canvasFirst, stageFirst, exportRootFirst;
+    function initFirst() {
+        canvasFirst = document.getElementById("canvasFirst");
+        handleCompleteFirst();
+    }
+    function handleCompleteFirst() {
+        //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+        exportRootFirst = new libFirst.first();
+        stageFirst = new createjs.Stage(canvasFirst);
+        stageFirst.addChild(exportRootFirst); 
+        //Registers the "tick" event listener.
+        createjs.Ticker.setFPS(libFirst.properties.fps);
+        createjs.Ticker.addEventListener("tick", stageFirst);        
+        //Code to support hidpi screens and responsive scaling.
+        (function(isResp, respDim, isScale, scaleType) {        
+            var lastW, lastH, lastS=1;      
+            window.addEventListener('resize', resizeCanvas);        
+            resizeCanvas();     
+            function resizeCanvas() {           
+                var w = libFirst.properties.width, h = libFirst.properties.height;            
+                var iw = window.innerWidth, ih=window.innerHeight;          
+                var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;          
+                if(isResp) {                
+                    if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+                        sRatio = lastS;                
+                    }               
+                    else if(!isScale) {                 
+                        if(iw<w || ih<h)                        
+                            sRatio = Math.min(xRatio, yRatio);              
+                    }               
+                    else if(scaleType==1) {                 
+                        sRatio = Math.min(xRatio, yRatio);              
+                    }               
+                    else if(scaleType==2) {                 
+                        sRatio = Math.max(xRatio, yRatio);              
+                    }           
+                }           
+                canvasFirst.width = w*pRatio*sRatio;         
+                canvasFirst.height = h*pRatio*sRatio;
+                canvasFirst.style.width = w*sRatio+'px';         
+                canvasFirst.style.height = h*sRatio+'px';
+                stageFirst.scaleX = pRatio*sRatio;           
+                stageFirst.scaleY = pRatio*sRatio;           
+                lastW = iw; lastH = ih; lastS = sRatio;     
+            }
+        })(false,'both',false,1);   
+    }
+
+    var canvasIdea, stageIdea, exportRootIdea;
+    function initIdea() {
+        canvasIdea = document.getElementById("canvasIdea");
+        handleCompleteIdea();
+    }
+    function handleCompleteIdea() {
+        //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+        exportRootIdea = new libIdea.idea_();
+        stageIdea = new createjs.Stage(canvasIdea);
+        stageIdea.addChild(exportRootIdea); 
+        //Registers the "tick" event listener.
+        createjs.Ticker.setFPS(libIdea.properties.fps);
+        createjs.Ticker.addEventListener("tick", stageIdea);        
+        //Code to support hidpi screens and responsive scaling.
+        (function(isResp, respDim, isScale, scaleType) {        
+            var lastW, lastH, lastS=1;      
+            window.addEventListener('resize', resizeCanvas);        
+            resizeCanvas();     
+            function resizeCanvas() {           
+                var w = libIdea.properties.width, h = libIdea.properties.height;            
+                var iw = window.innerWidth, ih=window.innerHeight;          
+                var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;          
+                if(isResp) {                
+                    if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+                        sRatio = lastS;                
+                    }               
+                    else if(!isScale) {                 
+                        if(iw<w || ih<h)                        
+                            sRatio = Math.min(xRatio, yRatio);              
+                    }               
+                    else if(scaleType==1) {                 
+                        sRatio = Math.min(xRatio, yRatio);              
+                    }               
+                    else if(scaleType==2) {                 
+                        sRatio = Math.max(xRatio, yRatio);              
+                    }           
+                }           
+                canvasIdea.width = w*pRatio*sRatio;         
+                canvasIdea.height = h*pRatio*sRatio;
+                canvasIdea.style.width = w*sRatio+'px';         
+                canvasIdea.style.height = h*sRatio+'px';
+                stageIdea.scaleX = pRatio*sRatio;           
+                stageIdea.scaleY = pRatio*sRatio;           
+                lastW = iw; lastH = ih; lastS = sRatio;     
+            }
+        })(false,'both',false,1);   
+    }
+</script>
+    <!-- endbuild -->
+
+    <!--[if lt IE 10]>
+    <link rel="stylesheet" href="https://rawgit.com/codefucker/finalReject/master/reject/reject.css" media="all" />
+    <script type="text/javascript" src="https://rawgit.com/codefucker/finalReject/master/reject/reject.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body onload="init1();init2();init3();initRocket();initFirst();initIdea();">
